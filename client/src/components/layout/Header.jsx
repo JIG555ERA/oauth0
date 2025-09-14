@@ -26,7 +26,7 @@ const Header = ({active=''}) => {
           OAuth
         </Link>
 
-        <div className='text-[24px] font-normal flex justify-between items-center'>
+        <div className='text-[20px] font-normal flex justify-between items-center'>
           {pages.map((page) => (
             <div
               key={page.id}

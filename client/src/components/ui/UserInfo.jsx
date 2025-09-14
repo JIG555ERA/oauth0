@@ -5,6 +5,7 @@ const UserInfo = () => {
 
     const { user, isAuthenticated, isLoading } = useAuth0();
 
+    if (isLoading) return <div className='hidden'>...</div>;
     return (
         <div
         className='2xl:w-[50vw] lg:[60vw] md:[70vw] w-[80vw] h-auto bg-gradient-to-br from-white/10 via-white/5 to-white/10 border-2 border-[#F9F9F9] rounded-3xl p-3.5 flex flex-col gap-2 justify-center items-center'>

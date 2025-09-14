@@ -1,8 +1,11 @@
 import React from 'react'
 import LoginButton from '../ui/LoginButton'
+import { useAuth0 } from '@auth0/auth0-react'
 import Profile from '../ui/Profile'
 
 const Header = ({active=''}) => {
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     const pages = [
         {id:'home', text:'Home', path:'/'},
@@ -35,8 +38,12 @@ const Header = ({active=''}) => {
                         </div>
                     ))}
                 </div>
-                <LoginButton />
-                <Profile />
+                {!isAuthenticated && (
+                    <LoginButton />
+                )}
+                {isAuthenticated && (
+                    <Profile />
+                )}
             </div>
         </div>
     )
